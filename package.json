@@ -1,0 +1,43 @@
+{
+  "name": "mark-it",
+  "version": "1.0.0",
+  "description": "Simple App to manage bookmarks",
+  "main": "index.js",
+  "scripts": {
+    "dev": "env-cmd -f ./config/dev.env nodemon src/index.js",
+    "build": "babel src --out-dir dist",
+    "start": "env-cmd -f ./config/prod.env nodemon -L src/index.js",
+    "start-dev": "env-cmd -f ./config/dev.env nodemon dist/index.js",
+    "start-prod": "env-cmd -f ./config/prod.env babel-node dist/index.js",
+    "test": "mocha test/",
+    "coverage": "nyc --reporter=text-summary --reporter=html --reporter=lcov --reporter=text  npm run test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/polyfill": "^7.12.1",
+    "bcrypt": "^5.0.0",
+    "chai-as-promised": "^7.1.1",
+    "chai-http": "^4.3.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.11.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/node": "^7.12.6",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "babel-watch": "^7.0.0",
+    "chai": "^4.2.0",
+    "env-cmd": "^10.1.0",
+    "mocha": "^8.2.1",
+    "nodemon": "^2.0.6",
+    "nyc": "^15.1.0",
+    "sinon": "^9.2.3",
+    "sinon-chai": "^3.5.0",
+    "snyk": "^1.437.3"
+  }
+}

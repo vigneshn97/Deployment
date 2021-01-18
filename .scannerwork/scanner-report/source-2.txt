@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<html>
+    <title>mark-It</title>
+    <body>
+        <h1>mark-It</h1>
+    </body>
+</html>
