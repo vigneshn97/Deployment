@@ -31,10 +31,10 @@ pipeline {
                 sh 'CI=true npm run start-prod'
             }
         }
-        stage('Build') {
+        stage('Bu') {
             steps {
                 echo 'Build'
-                // sh 'CI=true npm run start-prod'
+                
             }
         }
     }
