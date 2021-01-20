@@ -1,34 +1,16 @@
 const mongoose = require('mongoose');
 
-const bcrypt = require('bcrypt');
-
-const jwt = require('jsonwebtoken');
-
-const userSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-    trim: true,
-    unique: true
-  },
+const userSchema = mongoose.Schema({
+  name: String,
   NLID: {
     type: String,
-    required: true,
-    trim: true,
-    unique: true
+    required: true
   },
   designation: {
     type: String,
-    required: true,
-    trim: true
+    required: true
   },
-  contact: {
-    type: Number,
-    required: true,
-    trim: true,
-    unique: true
-  }
+  contact: Number
 });
-const User = mongoose.model("User", userSchema); // module.exports = User
-
+const User = mongoose.model("User", userSchema);
 module.exports = User;

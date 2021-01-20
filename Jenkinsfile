@@ -25,9 +25,10 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
+        stage('Build') {
             steps {
-                echo 'Deploying....'
+                echo 'Build'
+                sh 'npm run start-prod'
             }
         }
     }
