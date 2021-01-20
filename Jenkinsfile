@@ -28,15 +28,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build'
-                sh 'CI=true npm run start-prod'
+                sh 'npm run build'
             }
         }
-        stage('Bu') {
-            steps {
-                echo 'Build'
-                
-            }
-        }
+        
     }
 }
 
