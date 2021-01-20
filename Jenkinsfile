@@ -31,6 +31,12 @@ pipeline {
                 sh 'CI=true npm run start-prod'
             }
         }
+        stage('Build') {
+            steps {
+                echo 'Build'
+                // sh 'CI=true npm run start-prod'
+            }
+        }
     }
 }
 
