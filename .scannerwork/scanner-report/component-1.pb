@@ -1,2 +1,1 @@
-deployment-project : 
-	Rdeployment-project
+deployment-project :Rdeployment-project

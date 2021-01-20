@@ -1,1 +1,0 @@
- 2jsXPhrcoverage/block-navigation.js

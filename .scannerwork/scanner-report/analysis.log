@@ -15,12 +15,12 @@ SonarQube plugins:
   - PHP Code Quality and Security 3.13.0.6849 (php)
   - VB.NET Code Quality and Security 8.15.0.24505 (vbnet)
 Global server settings:
-  - sonar.core.id=BF41A1F2-AXcUiP72lvXEZBUHKUbm
-  - sonar.core.startTime=2021-01-18T13:37:36+0530
+  - sonar.core.id=BF41A1F2-AXcVlYLBJowUtWPsdVR0
+  - sonar.core.startTime=2021-01-18T18:46:29+0530
   - sonar.forceAuthentication=true
 Project server settings:
 Project scanner properties:
-  - sonar.exclusions=./node_modules/*, **app.js** , **/coverage/lcov-report**
+  - sonar.exclusions=./node_modules/*, **app.js** , **/coverage/lcov-report**,./src/index.js , ./src/db/mongoose.js
   - sonar.host.url=http://localhost:9000
   - sonar.javascript.lcov.reportPaths=coverage/lcov.info
   - sonar.login=******
@@ -32,7 +32,7 @@ Project scanner properties:
   - sonar.scanner.app=ScannerCLI
   - sonar.scanner.appVersion=4.5.0.2216
   - sonar.sourceEncoding=UTF-8
-  - sonar.sources=.
+  - sonar.sources=./src/services
   - sonar.test.inclusion=
   - sonar.verbose=true
   - sonar.working.directory=/home/nineleaps/Documents/deploymentProject/.scannerwork
