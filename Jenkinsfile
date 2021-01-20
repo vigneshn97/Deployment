@@ -28,7 +28,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build'
-                sh 'npm run start-prod'
+                sh 'CI=true npm run start-prod'
             }
         }
     }
