@@ -21,7 +21,7 @@ pipeline {
             steps {
                 echo 'SONAR-QUBE SCANNING AND ANALYSIS'
                 withSonarQubeEnv('Sonarqube') {
-                    sh "${scannerHome}/bin/sonar-scanner"
+                    sh "${scannerHome}/Downloads/sonar/bin/sonar-scanner"
                 }
             }
         }
