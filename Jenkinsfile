@@ -1,8 +1,7 @@
 pipeline {
     agent any
 
-    stages {      
-
+    stages {
         stage('install dependencies') {
             steps {
                 echo 'Building..'
@@ -13,6 +12,17 @@ pipeline {
             steps {
                 echo 'Testing..'
                 sh 'npm run test'
+            }
+        }
+        stage('Sonarqube') {
+            environment {
+                scannerHome = tool 'sonar_scanner'
+            }
+            steps {
+                echo 'SONAR-QUBE SCANNING AND ANALYSIS'
+                withSonarQubeEnv('Sonarqube') {
+                    sh "${scannerHome}/bin/sonar-scanner"
+                }
             }
         }
         stage('Deploy') {
