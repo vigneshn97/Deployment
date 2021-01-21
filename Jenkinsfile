@@ -31,7 +31,12 @@ pipeline {
                 sh 'npm run build'
             }
         }
-        
+        stage('Publishing artifacts'){
+            steps {
+                sshPublisher(publishers: [sshPublisherDesc(configName: 'deployAssignment', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '''npm i
+npm run start-prod &''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'dist, public, config, package.json, package-lock.json')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+            }
+        }
     }
 }
 
