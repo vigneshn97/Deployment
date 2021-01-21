@@ -14,23 +14,23 @@ pipeline {
                 sh 'npm run test'
             }
         }
-        stage('Sonarqube') {
-            environment {
-                scannerHome = tool 'sonar_scanner'
-            }
+        // stage('Sonarqube') {
+        //     environment {
+        //         scannerHome = tool 'sonar_scanner'
+        //     }
+        //     steps {
+        //         echo 'SONAR-QUBE SCANNING AND ANALYSIS'
+        //         withSonarQubeEnv('Sonarqube') {
+        //             sh "${scannerHome}/bin/sonar-scanner"
+        //         }
+        //     }
+        // }
+        stage('Build') {
             steps {
-                echo 'SONAR-QUBE SCANNING AND ANALYSIS'
-                withSonarQubeEnv('Sonarqube') {
-                    sh "${scannerHome}/bin/sonar-scanner"
-                }
+                echo 'Build'
+                sh 'npm run build'
             }
         }
-//         stage('Build') {
-//             steps {
-//                 echo 'Build'
-//                 sh 'npm run build'
-//             }
-//         }
 //         stage('Publishing artifacts'){
 //             steps {
 //                 sshPublisher(publishers: [sshPublisherDesc(configName: 'deployAssignment', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '''killall node 
